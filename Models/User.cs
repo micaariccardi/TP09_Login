@@ -14,6 +14,4 @@ public class User
         apellido = ape;
         dni = DNI;
     }
-
-    public User(){}
 }
