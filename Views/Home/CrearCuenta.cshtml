@@ -1,0 +1,14 @@
+<div class="text-center">
+    <h1 class="display-4">Registrarse</h1>
+    @* <h1 class="display-4"> &#128151; &#128516;</h1> *@
+</div>
+
+<form action = '@Url.Action("CreandoCuenta")' method = "post">
+    <input type = "text" placeholder="Username" name ="username" autofocus>
+    <input type = "text" placeholder="Nombre" name ="nombre" autofocus>
+    <input type = "text" placeholder="Apellido" name ="apellido" autofocus>
+    <input type = "text" placeholder="DNI" name ="dni" autofocus>
+    <input type = "password" placeholder="Contraseña" name ="contrasena" autofocus>
+    <input type = "password" placeholder="Confirmar contraseña" name ="confirmacion" autofocus>
+    <button type = "submit"></button>
+</form>

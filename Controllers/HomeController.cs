@@ -28,12 +28,18 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult CreandoCuenta(string username, string contrasena, string nombre, string apellido, string dni)
+    [HttpPost]
+    public IActionResult CreandoCuenta(string username, string contrasena, string nombre, string apellido, string dni, string confirmacion)
     {
-        BD.CrearUser(username, contrasena,nombre, apellido, dni);
-        return View("Index");
+        if (confirmacion == contrasena)
+        {
+            BD.CrearUser(username, contrasena,nombre, apellido, dni);
+            return View("Index");
+        }        
+        return View("CrearCuenta");
     }
 
+    [HttpPost]
     public IActionResult Bienvenida(string username, string contrasena)
     {
         if (BD.Existe(username) && BD.ContrasenaCorrecta(contrasena, username))
@@ -48,7 +54,7 @@ public class HomeController : Controller
         return View();
     }
 
-    //Crear controller post- olvide contraseña (cambiar contra??)
+   [HttpPost]
     public IActionResult CambiarContraseña(string username, string contrasenaNueva)
     {
         BD.CambiarContrasena(username, contrasenaNueva);

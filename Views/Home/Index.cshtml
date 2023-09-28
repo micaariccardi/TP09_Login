@@ -6,6 +6,18 @@
     <h1 class="display-4">Iniciar sesión</h1>
 </div>
 
-<form>
-    <input type = "text" placeholder="Username" name ="username">
+<form action = '@Url.Action("Bienvenida")' method = "post">
+    <input type = "text" placeholder="Username" name ="username" autofocus>
+    <input type = "password" placeholder="Contraseña" name ="contrasena" autofocus>
+    <button type = "submit"></button>
+</form>
+<br>
+<h6>¿Te olvidaste tu contraseña?</h6>
+<form action = '@Url.Action("OlvideContrasena")'>
+    <button>Registrate</button> @*HACER LA VIEW DE CAMBIAR CONTRA*@
+</form>
+
+<h6>¿No tenés cuenta?</h6>
+<form action = '@Url.Action("CrearCuenta")'>
+    <button>Registrate</button>
 </form>
